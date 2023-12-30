@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%=title%>
+        </title>
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+    <body>
+        <div class="body-container">
+            <div id="sign-up" class="container">
+                <form class="form" id="create-user" action="/users/create-user" method="post">
+                    <h1>Create New Account</h1>
+                    <input id="name" class="user-params" name="name" type="text" placeholder="Enter your Name" required >
+                    <input id="username" class="user-params" type="text" name="email" placeholder="Enter your Username/Email" required >
+                    <input id="password" class="user-params" type="password" name="password" placeholder="Enter Password" required >
+                    <button class="button" type="submit" id="sign-up-button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

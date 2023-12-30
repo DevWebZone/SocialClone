@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%=title%>
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+    <body>
+        <div class="body-container">
+            <div id="sign-in" class="container">
+                <form class="form" id="login-user" action="/users/login-user" method="post">
+                    <h1>Log In</h1>
+                    <input id="username" class="user-params" type="text" name="email" placeholder="Enter your Username/Email" required >
+                    <input id="password" class="user-params" type="password" name="password" placeholder="Enter Password" required >
+                    <button class="button" type="submit" id="sign-in-button">Sign In</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            <% if(flash.success && flash.success.length >0){%>
+                new Noty({
+                            type: 'success',
+                            layout: 'topCenter',
+                            text: '<%= flash.success %>',
+                            theme: 'relax',
+                            timeout: 1500
+                        }).show();
+            <% } %>
+        </script>
+          
+    </body>
+</html>

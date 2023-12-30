@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  margin: 0px; }
+  body #home-header {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100vw;
+    background-color: gray; }
+    body #home-header span {
+      margin: 10px;
+      text-align: left;
+      font-size: xx-large;
+      font-weight: 600;
+      width: 85vw; }
+    body #home-header a {
+      text-align: center;
+      margin-top: 6px;
+      padding-top: 8px;
+      margin-right: 10px;
+      text-decoration: none;
+      height: 30px;
+      width: 100px;
+      background-color: #201f1f;
+      color: wheat;
+      font-size: medium; }

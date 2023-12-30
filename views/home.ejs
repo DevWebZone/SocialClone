@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%=title%>
+        </title>
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header id="home-header">
+            <span>
+                Social
+            </span>
+            <a href="/sign-up" >Sign Up</a>
+            <a href="/sign-in">Log In</a>
+        </header>
+        <main>
+            <h1>
+                First Page :
+                <%=title%>
+            </h1>
+        </main>
+
+        <script>
+            <% if( flash.success && flash.success.length > 0) { %>
+                new Noty({
+                            theme: 'relax',
+                            text: '<%= flash.success %>',
+                            type: 'success',
+                            layout: 'topCenter',
+                            timeout: 1500
+                        }).show();
+            <% } %>
+            
+        </script>
+       
+    </body>
+</html>

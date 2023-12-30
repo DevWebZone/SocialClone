@@ -1,0 +1,32 @@
+<li class="post-class" id="post-<%= post._id %>">
+    <div class="delete-button">
+        <a href="/posts/delete-post/?id=<%= post._id %>" type="submit" class="delete-post-button">x</a>
+    </div>
+    <small id="post-user">
+        <%= post.user.name %>
+    </small>
+    <p>
+        <%= post.content %>
+        
+    </p>
+    <a href="/posts/toggle-like/?id=<%= post._id %>&type=Post" id="like-post-<%= post._id %>" type="submit" class="like-button">
+        <span class="material-symbols-outlined">
+            favorite
+        </span>
+    </a>
+        
+     <ul id= "post-comment-<%=post._id%>">
+        <% if(post.comments !== undefined){ %>
+            <% for (comment of post.comments){ %>
+                <%- include('_comments') -%>
+            <%}%>
+        <%}%>
+    </ul>
+    <div>
+    <form id="post-<%= post._id %>-comments-form" action="/posts/add-comment" method="post">
+            <input type="text" name="content" id="comment-content" placeholder="write a comment..." required>
+            <input class="create-button" type="submit" value="+">
+            <input type="hidden" name="post" value="<%= post._id %>">
+    </form> 
+    </div>
+</li>

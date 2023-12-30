@@ -1,0 +1,12 @@
+<li id="comment-<%= comment._id %>"  class="comment" style="list-style: none;">
+    <%= comment.content %>
+    <a href="/posts/toggle-like/?id=<%= comment._id %>&type=Comment" id="like-comment-<%= comment._id %>" type="submit" class="like-button">
+        <span class="material-symbols-outlined">
+            favorite
+        </span>
+    </a>
+    <div class="delete-comment">
+        <a href="/posts/delete-comment/?id=<%= comment._id %>" type="submit" class="delete-comment-button">x</a>
+    </div>
+    
+</li>
